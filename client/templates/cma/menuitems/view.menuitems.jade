@@ -1,0 +1,45 @@
+template(name='cmaMenuItemsMain')
+	form.cmaView__editor_form(name="addMenuItemForm")
+		.cmaView__header
+			h2.cmaView__header_title Add Menu Items
+			button.cmaView__header_btn(type="submit")
+				span.collecticon.collecticon-plus
+				span.cmaView__header_btn-text add
+		.cmaView__editor
+			.cmaView__editor_row
+				.cmaView__editor_label
+					label(for="name") Name
+				.cmaView__editor_input
+					input(type="text", name="name", placeholder="Name of menu item")                
+
+			.cmaView__editor_row
+				.cmaView__editor_label
+					label(for="ingredients") Ingredients
+				.cmaView__editor_input
+					textarea(name="ingredients", rows="3", placeholder="List of ingredients")               
+
+			.cmaView__editor_row
+				.cmaView__editor_label
+					label(for="versions") Versions
+				.cmaView__editor_input.cmaView__editor_versions
+					.cmaView__editor_version
+						.cmaView__editor_version_row
+							input(type="text", name="versionName", placeholder="Version Name", autocomplete="off")
+						.cmaView__editor_version_row
+							a.btnAddVersion.collecticon.collecticon-plus(href='#')
+					each listVersions
+						.cmaView__editor_version
+							.cmaView__editor_version_row.addedVersionName
+								h3=this
+							.cmaView__editor_version_row
+								a.btnDelVersion.collecticon.collecticon-minus(href='#', data-name=this)
+
+			.cmaView__editor_row
+				.cmaView__editor_label
+					label(for="allergies") Allergies
+				.cmaView__editor_input.cmaView__editor_allergies
+					ul.Allergies__list
+						each listAllergies
+							li.Allergy__select(data-id=_id)
+								span.Allergy__icon.joelIcon.joelIcon-5x(class="joelIcon-#{icon} {{enabledAllergy _id}}")
+								span.Allergy__name=name

@@ -1,0 +1,29 @@
+template(name='cmaMenusMain')
+	form.cmaView__editor_form(name="addMenuForm")
+		.cmaView__header
+			h2.cmaView__header_title Manage Menus
+			.inputRow
+				input(type="text", name="menuDatePicker", placeholder=currentDate, value=currentDate, id="datePicker")
+				span.collecticon.collecticon-calendar#datePickerBtn
+			.inputRow
+				select(type="text", name="menuClientPicker")
+					each listClients
+						option(value=_id)=name
+				span.collecticon.collecticon-user-group.menuClientPickerSelect
+			button.cmaView__header_btn(type="submit")
+				span.collecticon.collecticon-plus
+				span.cmaView__header_btn-text add
+		.cmaView__editor.Menus
+			ul.Menus__listofitems
+				each itemsOnMenu
+					li.Menus__listofitems_item
+						.Menu__item_name
+							h3=name
+
+						.Menu__item_allergies
+							each allergies
+								each itemAllergies this
+									span.Menu__item_allergy.joelIcon.joelIcon-2x(class="joelIcon-#{icon}")
+
+						.Menu__item_btns
+							span.collecticon.collecticon-sort.dragHandle

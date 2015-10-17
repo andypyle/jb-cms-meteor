@@ -1,0 +1,19 @@
+template(name='layoutCma')
+    main#cma
+        header
+            .brand
+                h1 jillBee
+            nav
+                ul.navigation
+                    li
+                        a(href='{{pathFor "cmaClientsRoute"}}') clients
+                    li
+                        a(href='{{pathFor "cmaMenusRoute"}}') menus
+                    li
+                        a(href='{{pathFor "cmaMenuItemsRoute"}}') menu items
+
+        section
+            if sidebarVisible
+                +menuItemsSidebar
+            .cmaView
+                +Template.dynamic(template=main)        

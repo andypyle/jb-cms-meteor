@@ -1,0 +1,45 @@
+@font-face {
+  font-family: "joelIcons";
+  src: url('./fonts/joelIcons.eot');
+  src: url('./fonts/joelIcons.eot?#iefix') format('eot'),
+    url('./fonts/joelIcons.woff') format('woff'),
+    url('./fonts/joelIcons.ttf') format('truetype'),
+    url('./fonts/joelIcons.svg#joelIcons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.joelIcon:before {
+  display: inline-block;
+  font-family: "joelIcons";
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.joelIcon-lg {
+  font-size: 1.3333333333333333em;
+  line-height: 0.75em;
+  vertical-align: -15%;
+}
+.joelIcon-2x { font-size: 2em; }
+.joelIcon-3x { font-size: 3em; }
+.joelIcon-4x { font-size: 4em; }
+.joelIcon-5x { font-size: 5em; }
+.joelIcon-fw {
+  width: 1.2857142857142858em;
+  text-align: center;
+}
+
+.joelIcon-cog:before { content: "\EA01" }
+.joelIcon-dairy:before { content: "\EA02" }
+.joelIcon-eggs:before { content: "\EA03" }
+.joelIcon-gluten:before { content: "\EA04" }
+.joelIcon-hex-filled:before { content: "\EA05" }
+.joelIcon-hex-outline:before { content: "\EA06" }
+.joelIcon-nuts:before { content: "\EA07" }
+.joelIcon-seafood:before { content: "\EA08" }
+.joelIcon-star-filled:before { content: "\EA09" }
+.joelIcon-star-outline:before { content: "\EA0A" }

@@ -1,0 +1,394 @@
+// Styles for CMA section.
+#cma
+	header
+		+flex(row)
+		justify-content: space-between
+		align-items: center
+		padding: 0 1.25rem
+		border-bottom: 1px dotted $ltGrey
+
+	.brand
+		h1
+			font-size: 2.5rem
+			padding: 1rem
+	nav
+		+flex
+		flex: none
+
+	.navigation
+		+flex(row)
+		li
+			+flex
+			a
+				+flex(center)
+				font-size: 1.25rem
+				font-weight: 300
+				padding: 1rem
+
+				&:hover
+					box-shadow: 0px 5px 0px $dkGrey
+					+fastTransition
+
+	section
+		+flex(row)
+		flex: 1
+		height: 100%
+
+	.menuItems
+		+flex(col)
+		+col(3)
+		border-right: 1px dotted $ltGrey
+		position: relative
+		//margin-left: 0 - colWidth(3)
+
+
+	.menuItems__search
+		+flex
+		padding: 1rem
+		border-bottom: 1px dotted $ltGrey
+
+	.menuItems__listbox
+		+flex(col)
+		flex: 1
+		overflow-y: auto
+		height: 100px
+
+	.menuItems__list
+		+flex(col)
+		margin: 0
+		padding: 0
+
+	.menuItems__list-item
+		+flex(row)
+		padding: 1rem
+		font-size: .85rem
+		line-height: 1.5
+		font-weight: 300
+		border-bottom: 1px dotted $ltGrey
+		cursor: pointer
+		+fastTransition
+
+		span
+			+fastTransition
+
+		&:hover 
+			background-color: lighten($accent, 35%)
+			span
+				transform: translateX(10px) scale(1.01)
+				font-weight: 400
+				+fastTransition
+
+	.menuItems__add
+		+flex
+		padding: 1rem
+		border-top: 1px dotted $ltGrey
+		background-color: white
+
+
+
+	.cmaView
+		+flex(col)
+		+col(9)
+		flex: 1
+		min-height: 100%
+
+	.cmaView__header
+		+flex(row)
+		align-items: center
+		justify-content: space-between
+		border-bottom: 1px dotted $ltGrey
+		width: 100%
+		
+		.cmaView__header_title,
+		.cmaView__header_btn
+			font-size: 1.25rem
+			color: lighten($dkGrey, 15%)
+			padding: 1.725rem
+
+		.cmaView__header_btn
+			+flex(row)
+			align-items: center
+			border-left: 1px dotted $ltGrey
+			font-weight: 400
+			text-transform: uppercase
+			color: lighten($dkGrey, 40%)
+
+			.cmaView__header_btn-text
+				font-size: 1rem
+				margin-left: .25rem
+
+			&:hover
+				background-color: lighten($primary, 40%)
+				color: white
+
+	.cmaView__editor_form
+
+
+	.cmaView__editor
+		+flex(col)
+		padding: 1rem
+
+
+	.cmaView__editor_row
+		+flex(row)
+		align-items: flex-start
+
+	.cmaView__editor_label
+		+flex
+		+col(2)
+		justify-content: flex-end
+		order: -1
+
+		label
+			font-size: 1.1rem
+			font-weight: 400
+			padding: 1rem
+			color: lighten($dkGrey, 28%)
+
+	.cmaView__editor_input
+		+flex
+		+col(10)
+		padding: .5rem
+
+		input,
+		textarea
+			+flex
+			flex: 1
+			padding: .5rem
+			font-size: 1.05rem
+			font-weight: 300
+			outline: 0
+			border: 0
+			border-radius: .25rem .25rem 0 0
+			background-color: lighten($secondary, 38%)
+			border-bottom: 2px solid darken($ltGrey, 15%)
+			+fastTransition
+
+			&:focus
+				box-shadow: -8px 0px 0px lighten($accent, 15%)
+				border-color: lighten($accent, 15%)
+				+fastTransition
+
+	.cmaView__editor_versions,
+	.cmaView__editor_version_row,
+	.cmaView__editor_locations,
+	.cmaView__editor_location_row
+		+flex(row)
+		//flex: 1
+
+	.cmaView__editor_versions
+		flex-wrap: wrap
+
+	.cmaView__editor_version_row,
+	.cmaView__editor_location_row
+		margin-bottom: .5rem
+
+	.cmaView__editor_editLocation
+		+flex(col)
+		+col(4)
+		justify-content: flex-start
+		flex: none 
+
+		padding: 0 1rem 0 0
+		+fastTransition
+
+		.btnAddLocation
+			+flex(center)
+			+col(12)
+			padding: .25rem
+			border-radius: .25rem
+			font-size: .9rem
+			background-color: $secondary
+			color: white
+			&:hover
+				background-color: $secondary-light
+
+	.cmaView__editor_version,
+	.cmaView__editor_location
+		+flex(col)
+		+col(4)
+
+		padding: 0 .5rem
+		+fastTransition
+
+		&:nth-child(3n)
+			padding-right: 0
+
+		&:nth-child(3n+1)
+			padding-left: 0
+
+
+		.lblVersion,
+		.addedVersionLabel,
+		.addedLocationLabel
+			+flex
+			+col(7)
+			align-items: center
+			justify-content: flex-end
+			padding-right: .5rem
+			font-size: .8rem
+			font-weight: 300
+			text-transform: uppercase
+			color: lighten($dkGrey, 24%)
+
+		.inputVersion
+			font-size: .8rem
+			padding: .25rem
+
+		.addedVersionName,
+		.addedLocationName
+			+flex(center)
+			flex: 1
+			padding: .75rem
+			font-size: 1.05rem
+
+
+		.btnAddVersion,
+		.btnAddLocation
+			+flex(center)
+			+col(12)
+			padding: .25rem
+			border-radius: .25rem
+			font-size: .9rem
+			background-color: $secondary
+			color: white
+			&:hover
+				background-color: $secondary-light
+
+		.btnDelVersion,
+		.btnDelLocation
+			+flex(center)
+			+col(12)
+			padding: .25rem
+			border-radius: .25rem
+			font-size: .9rem
+			background-color: $error
+			color: white
+			&:hover
+				background-color: lighten($error, 10%)
+
+	.cmaView__editor_locationsAdded
+		+flex(row)
+		width: 100%
+		flex: 1
+		flex-wrap: wrap
+
+	.cmaView__editor_allergies
+		.Allergies__list
+			+flex(row)
+
+		.Allergy__select
+			+flex(col)
+			align-items: center
+			padding: .5rem
+			cursor: pointer
+
+			+fastTransition
+
+			.Allergy__name
+				font-size: .9rem
+				font-weight: 300
+				text-transform: uppercase
+
+				.Allergy__name-disabled
+
+			&:hover .Allergy__icon
+				transform: scale(1.08)
+
+				+fastTransition
+
+			.Allergy__icon-enabled
+				opacity: 1
+				color: darken($accent, 15%)
+				text-shadow: 0px 3px 14px transparentize($success, .6)
+				+fastTransition
+
+			.Allergy__icon-disabled
+				opacity: .5
+				+fastTransition
+
+				&:hover
+					opacity: .75
+
+
+	.Clients
+		padding: 0
+	.Client
+		align-items: center
+		+col(12)
+		border-bottom: 1px dotted $ltGrey
+
+	.Client__name,
+	.Client__btns
+		padding: 1rem 1.5rem
+
+	.Client__name
+		+flex
+		+col(8)
+		h3
+			font-size: 1.15rem
+			font-weight: 400
+			letter-spacing: 0.005rem
+
+	.Client__btns
+		+flex
+		justify-content: center
+		+col(4)
+		font-size: 1.5rem
+
+		a
+			padding: 0 1rem
+			opacity: .7
+
+			&:hover
+				opacity: 1
+				transform: scale(1.09)
+
+			&.btnRemove
+				color: $error
+
+			&.btnEdit
+				color: $primary
+
+	.Menus
+		+flex(col)
+		height: 100%
+		padding: 0
+
+	.Menus__listofitems
+		+flex(col)
+		+col(12)
+		flex: 1
+		padding: 0
+		margin: 0
+		min-height: 275px
+
+	.Menus__listofitems_item
+		+flex(row)
+		justify-content: space-between
+		align-items: center
+		padding: 1rem 1.75rem
+		border-bottom: 1px dotted $ltGrey
+
+		.Menu__item_name
+			+col(4)
+			flex-shrink: 0
+			h3
+				font-size: 1.25rem
+				font-weight: 300
+				line-height: 1.5
+
+		.Menu__item_allergies
+
+
+		.Menu__item_btns
+			span
+				cursor: move
+				opacity: .5
+				font-size: 1.25rem
+
+				+fastTransition
+
+				&:hover
+					opacity: 1
+					+fastTransition

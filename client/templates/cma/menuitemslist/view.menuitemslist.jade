@@ -1,0 +1,14 @@
+template(name="menuItemsSidebar")
+	aside.menuItems
+		.menuItems__search.inputRow
+			input(type="search", name="menuItemsSearch", placeholder="search")
+			span.collecticon.collecticon-magnifier-left
+		.menuItems__listbox
+			ul.menuItems__list
+				each menuItemsList
+					li.menuItems__list-item(data-itemId=_id)
+						span=name
+
+		.menuItems__add.inputRow
+			input(type="text", name="menuItemsAdd", placeholder="add")
+			span.collecticon.collecticon-plus.addMenuItemSidebar

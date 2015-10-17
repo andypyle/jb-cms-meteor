@@ -1,0 +1,14 @@
+template(name='cmaClientsManage')
+	.cmaView__header
+		h2.cmaView__header_title Manage Clients
+		a.cmaView__header_btn(href='{{pathFor "cmaClientsAddRoute"}}')
+			span.collecticon.collecticon-page
+			span.cmaView__header_btn-text new
+	.cmaView__editor.Clients
+		each listClients
+			.cmaView__editor_row.Client
+				.Client__name
+					h3=name
+				.Client__btns
+					a.collecticon.collecticon-xmark.btnRemove(href='#', data-clientName=name, data-clientId=_id)
+					a.collecticon.collecticon-pencil.btnEdit(href='{{pathFor "cmaClientsEditRoute" clientId=_id}}')

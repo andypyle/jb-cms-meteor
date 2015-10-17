@@ -1,0 +1,30 @@
+template(name='cmaClientsAdd')
+	form.cmaView__editor_form(name="addClientForm")
+		.cmaView__header
+			h2.cmaView__header_title Manage Clients &raquo; New
+			button.cmaView__header_btn(type="submit")
+				span.collecticon.collecticon-plus
+				span.cmaView__header_btn-text add
+		.cmaView__editor
+			.cmaView__editor_row
+				.cmaView__editor_label
+					label(for="name") Name
+				.cmaView__editor_input
+					input(type="text", name="name", placeholder="Name of client")
+
+			.cmaView__editor_row
+				.cmaView__editor_label
+					label(for="locations") Locations
+				.cmaView__editor_input.cmaView__editor_locations
+					.cmaView__editor_editLocation
+						.cmaView__editor_location_row
+							input(type="text", name="locationName", placeholder="Location Name", autocomplete="off")
+						.cmaView__editor_location_row
+							a.btnAddLocation.collecticon.collecticon-plus(href='#')
+					.cmaView__editor_locationsAdded
+						each listLocations
+							.cmaView__editor_location
+								.cmaView__editor_location_row.addedLocationName
+									h3=this
+								.cmaView__editor_location_row
+									a.btnDelLocation.collecticon.collecticon-minus(href='#', data-name=this)
