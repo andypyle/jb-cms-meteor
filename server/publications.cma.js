@@ -30,6 +30,12 @@ Meteor.publishComposite('menuItemsNewMenu', function(items){
 	};
 });
 
+Meteor.publish('clientMenu', function(clientId, date){
+	var clientMenu = Menus.find({clientId:clientId, date:date});
+	var clientMenuEntries = MenuItems.find({});
+	return [clientMenu, clientMenuEntries];
+});
+
 
 Meteor.publish('allergiesAll', function(){
 	return Allergies.find({});

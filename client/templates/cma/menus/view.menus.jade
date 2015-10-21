@@ -11,19 +11,14 @@ template(name='cmaMenusMain')
 						option(value=_id)=name
 				span.collecticon.collecticon-user-group.menuClientPickerSelect
 			button.cmaView__header_btn(type="submit")
-				span.collecticon.collecticon-plus
-				span.cmaView__header_btn-text add
+				span.collecticon.collecticon-tick
+				span.cmaView__header_btn-text save
 		.cmaView__editor.Menus
 			ul.Menus__listofitems
 				each itemsOnMenu
-					li.Menus__listofitems_item
+					li.Menus__listofitems_item(data-itemid=_id, data-itemname=name)
 						.Menu__item_name
 							h3=name
-
-						.Menu__item_allergies
-							each allergies
-								each itemAllergies this
-									span.Menu__item_allergy.joelIcon.joelIcon-2x(class="joelIcon-#{icon}")
 
 						.Menu__item_btns
 							span.collecticon.collecticon-sort.dragHandle
